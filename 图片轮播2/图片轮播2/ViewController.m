@@ -25,26 +25,18 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    NSMutableArray *marr = [NSMutableArray array];
     
-    
-    UIView *view0 = [[UIView alloc]initWithFrame:CGRectMake(0,20,APP_WIDTH , APP_HEIGHT)];
-    view0.backgroundColor = [UIColor redColor];
-    
-    UIView *view1 = [[UIView alloc]initWithFrame:CGRectMake(0,20,APP_WIDTH , APP_HEIGHT)];
-    view1.backgroundColor = [UIColor greenColor];
-    
-    UIView *view2 = [[UIView alloc]initWithFrame:CGRectMake(0, 20,APP_WIDTH, APP_HEIGHT)];
-    view2.backgroundColor = [UIColor yellowColor];
-    
-    UIView *view3 = [[UIView alloc]initWithFrame:CGRectMake(0, 20,APP_WIDTH, APP_HEIGHT)];
-    view3.backgroundColor = [UIColor blueColor];
-    
-    UIView *view4 = [[UIView alloc]initWithFrame:CGRectMake(0, 20,APP_WIDTH, APP_HEIGHT)];
-    view4.backgroundColor = [UIColor blackColor];
-    
+    for (int i = 1; i < 6; i ++) {
+        
+        UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(0,20,APP_WIDTH , APP_HEIGHT)];
+        view.image = [UIImage imageNamed:[NSString stringWithFormat:@"%zd",i]];
+        view.contentMode = UIViewContentModeScaleToFill;
+        [marr addObject:view];
+    }
     
     loopScrollView *scrollView = [[loopScrollView alloc]initWithFrame:CGRectMake(0, 0, APP_WIDTH, APP_HEIGHT)];
-    scrollView.views = @[view0,view1,view2,view3,view4];
+    scrollView.views = marr.copy;
     scrollView.pageIcon = YES;
     scrollView.slide = YES;
 //    scrollView.slideTime = 5;

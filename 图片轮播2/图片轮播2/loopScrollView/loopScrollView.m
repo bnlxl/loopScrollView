@@ -34,7 +34,6 @@
     _centerNum = [self JudgecenterNumWithNum:centerNum];
     if (self.isPageIcon) {
         self.pageControl.currentPage = _centerNum;
-        NSLog(@"%@",self.superview);
     }
 }
 
