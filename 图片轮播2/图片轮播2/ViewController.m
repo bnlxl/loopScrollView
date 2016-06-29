@@ -27,7 +27,7 @@
     
     NSMutableArray *marr = [NSMutableArray array];
     
-    for (int i = 1; i < 6; i ++) {
+    for (int i = 1; i <= 6; i ++) {
         
         UIImageView *view = [[UIImageView alloc]initWithFrame:CGRectMake(0,20,APP_WIDTH , APP_HEIGHT)];
         view.image = [UIImage imageNamed:[NSString stringWithFormat:@"%zd",i]];
