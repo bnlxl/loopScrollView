@@ -30,58 +30,7 @@
 @end
 @implementation loopScrollView
 
--(void)setCenterNum:(NSInteger)centerNum{
-    _centerNum = [self JudgecenterNumWithNum:centerNum];
-    if (self.isPageIcon) {
-        self.pageControl.currentPage = _centerNum;
-    }
-}
 
--(NSInteger)leftNum{
-    if (self.centerNum == 0) {
-        _leftNum = self.views.count -1;
-    }else{
-        _leftNum = self.centerNum - 1;
-    }
-    return _leftNum;
-}
-
--(NSInteger)rightNum{
-    if (self.centerNum == self.views.count - 1) {
-        _rightNum = 0;
-    }else{
-        _rightNum = self.centerNum + 1;
-    }
-    return _rightNum;
-}
-
--(void)setViews:(NSMutableArray *)views{
-    if (views) {
-        _views = views;
-        self.bounces = NO;
-        self.showsHorizontalScrollIndicator = NO;
-        self.pagingEnabled = YES;
-        self.delegate = self;
-        self.centerNum = 0;
-        [self addAllSubView];
-        if (self.isPageIcon) {
-            self.pageControl.numberOfPages = views.count;
-            self.pageControl.currentPage = 0;
-        }
-    }
-}
-
--(UIPageControl *)pageControl{
-    if (!_pageControl) {
-        _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.frame.size.height * 3 / 4, self.frame.size.width, self.frame.size.height * 1 / 5 )];
-        [_pageControl setPageIndicatorTintColor:[UIColor whiteColor]];
-        [_pageControl setCurrentPage:self.centerNum];
-        [_pageControl setUserInteractionEnabled:NO];
-        [_pageControl setNumberOfPages:self.views.count];
-        [_pageControl setCurrentPageIndicatorTintColor:[UIColor blackColor]];
-    }
-    return _pageControl;
-}
 
 //剔除不存在的元素..使得永远都是在 self.views 里循环
 -(NSInteger)JudgecenterNumWithNum:(NSInteger)num{
@@ -172,6 +121,72 @@
         [self.superview addSubview:self.pageControl];
     }
     [self addTimerSlider];
+}
+
+#pragma mark - 构造方法 setter and getter
+-(void)setCenterNum:(NSInteger)centerNum{
+    _centerNum = [self JudgecenterNumWithNum:centerNum];
+    if (self.isPageIcon) {
+        self.pageControl.currentPage = _centerNum;
+    }
+}
+
+-(void)setImages:(NSArray<UIImage *> *)images{
+    if (images) {
+        _images = images;
+        NSMutableArray *mArr = [NSMutableArray array];
+        for (UIImage *img in images) {
+            UIImageView *imageView = [[UIImageView alloc]initWithImage:img];
+            [mArr addObject:imageView];
+        }
+        self.views = mArr.copy;
+    }
+}
+
+-(NSInteger)leftNum{
+    if (self.centerNum == 0) {
+        _leftNum = self.views.count -1;
+    }else{
+        _leftNum = self.centerNum - 1;
+    }
+    return _leftNum;
+}
+
+-(NSInteger)rightNum{
+    if (self.centerNum == self.views.count - 1) {
+        _rightNum = 0;
+    }else{
+        _rightNum = self.centerNum + 1;
+    }
+    return _rightNum;
+}
+
+-(void)setViews:(NSMutableArray *)views{
+    if (views) {
+        _views = views;
+        self.bounces = NO;
+        self.showsHorizontalScrollIndicator = NO;
+        self.pagingEnabled = YES;
+        self.delegate = self;
+        self.centerNum = 0;
+        [self addAllSubView];
+        if (self.isPageIcon) {
+            self.pageControl.numberOfPages = views.count;
+            self.pageControl.currentPage = 0;
+        }
+    }
+}
+
+-(UIPageControl *)pageControl{
+    if (!_pageControl) {
+        _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.frame.size.height * 3 / 4, self.frame.size.width, self.frame.size.height * 1 / 5 )];
+        [_pageControl setPageIndicatorTintColor:[UIColor whiteColor]];
+        [_pageControl setCurrentPage:self.centerNum];
+        [_pageControl setUserInteractionEnabled:NO];
+        [_pageControl setNumberOfPages:self.views.count];
+        [_pageControl setCurrentPageIndicatorTintColor:[UIColor blackColor]];
+    }
+    return _pageControl;
 }
 
 @end

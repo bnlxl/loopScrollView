@@ -18,6 +18,9 @@
 
 @interface loopScrollView : UIScrollView
 
+//需要循环的图片数组(应用内图片)
+@property (nonatomic , strong) NSArray<UIImage *> *images;//如果需要 SDWebImage 下载图片,可以自行创建 imageView 用下面 views 的属性
+
 //需要循环的 view 数组
 @property (nonatomic , strong) NSArray<UIView *> *views;
 //是否需要 pageIcon
@@ -28,6 +31,7 @@
 @property (nonatomic , assign) CGFloat slideTime;
 //界面下方的 pageControl (此处可以不用管理,默认位置为此 view 下方中间,颜色为黑白,有需要可以自行设置)
 @property (nonatomic , strong) UIPageControl *pageControl;
+
 
 @end
 

@@ -15,7 +15,7 @@
 		C9154B481CF6FD72000A9077 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9154B461CF6FD72000A9077 /* LaunchScreen.storyboard */; };
 		C9154B531CF6FD72000A9077 /* ____2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9154B521CF6FD72000A9077 /* ____2Tests.m */; };
 		C9154B5E1CF6FD72000A9077 /* ____2UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C9154B5D1CF6FD72000A9077 /* ____2UITests.m */; };
-		C9CAF04A1D221F6700CCA75F /* loopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C9CAF0471D221F6700CCA75F /* loopScrollView.m */; };
+		C92829C91D3376E300460B0C /* loopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C92829C81D3376E300460B0C /* loopScrollView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		C9154B591CF6FD72000A9077 /* 图片轮播2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "图片轮播2UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9154B5D1CF6FD72000A9077 /* ____2UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____2UITests.m"; sourceTree = "<group>"; };
 		C9154B5F1CF6FD72000A9077 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C9CAF0461D221F6700CCA75F /* loopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loopScrollView.h; sourceTree = "<group>"; };
-		C9CAF0471D221F6700CCA75F /* loopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loopScrollView.m; sourceTree = "<group>"; };
+		C92829C71D3376E300460B0C /* loopScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = loopScrollView.h; sourceTree = "<group>"; };
+		C92829C81D3376E300460B0C /* loopScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = loopScrollView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +108,7 @@
 				C9154B3C1CF6FD72000A9077 /* AppDelegate.m */,
 				C9154B3E1CF6FD72000A9077 /* ViewController.h */,
 				C9154B3F1CF6FD72000A9077 /* ViewController.m */,
-				C9CAF0451D221F6700CCA75F /* loopScrollView */,
+				C92829C61D3376E300460B0C /* loopScrollView */,
 				C9154B411CF6FD72000A9077 /* Main.storyboard */,
 				C9154B441CF6FD72000A9077 /* Assets.xcassets */,
 				C9154B461CF6FD72000A9077 /* LaunchScreen.storyboard */,
@@ -144,13 +144,14 @@
 			path = "图片轮播2UITests";
 			sourceTree = "<group>";
 		};
-		C9CAF0451D221F6700CCA75F /* loopScrollView */ = {
+		C92829C61D3376E300460B0C /* loopScrollView */ = {
 			isa = PBXGroup;
 			children = (
-				C9CAF0461D221F6700CCA75F /* loopScrollView.h */,
-				C9CAF0471D221F6700CCA75F /* loopScrollView.m */,
+				C92829C71D3376E300460B0C /* loopScrollView.h */,
+				C92829C81D3376E300460B0C /* loopScrollView.m */,
 			);
-			path = loopScrollView;
+			name = loopScrollView;
+			path = ../../loopScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +287,7 @@
 				C9154B401CF6FD72000A9077 /* ViewController.m in Sources */,
 				C9154B3D1CF6FD72000A9077 /* AppDelegate.m in Sources */,
 				C9154B3A1CF6FD72000A9077 /* main.m in Sources */,
-				C9CAF04A1D221F6700CCA75F /* loopScrollView.m in Sources */,
+				C92829C91D3376E300460B0C /* loopScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
